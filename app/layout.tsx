@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { cn } from "@/lib/utils";
 
 const geistSans = Open_Sans({
   subsets: ["latin"],
@@ -31,7 +32,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={cn`bg-white dark:bg-[#131316] ${geistSans.variable} ${geistMono.variable} antialiased `}
         >
           <ThemeProvider
             attribute="class"
